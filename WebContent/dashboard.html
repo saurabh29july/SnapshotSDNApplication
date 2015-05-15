@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Snapshot | Dashboard</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" type="text/css" href="css/cloud-admin.css">
+<link rel="stylesheet" type="text/css" href="css/themes/default.css"
+	id="skin-switcher">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<!-- STYLESHEETS -->
+<!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- ANIMATE -->
+<link rel="stylesheet" type="text/css"
+	href="css/animatecss/animate.min.css" />
+<!-- DATE RANGE PICKER -->
+<link rel="stylesheet" type="text/css"
+	href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+<!-- TODO -->
+<link rel="stylesheet" type="text/css"
+	href="js/jquery-todo/css/styles.css" />
+<!-- FULL CALENDAR -->
+<link rel="stylesheet" type="text/css"
+	href="js/fullcalendar/fullcalendar.min.css" />
+<!-- GRITTER -->
+<link rel="stylesheet" type="text/css"
+	href="js/gritter/css/jquery.gritter.css" />
+<!-- FONTS -->
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'
+	rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- HEADER -->
+	<header class="navbar clearfix" id="header">
+		<div class="container">
+			<div class="navbar-brand">
+				<!-- COMPANY LOGO -->
+				<a href="dashboard.html"> <span
+					style="margin-left: 50px; font-weight: 600; color: white;">Snapshot
+						SDN Application</span>
+				</a>
+				<!-- /COMPANY LOGO -->
+				<!-- TEAM STATUS FOR MOBILE -->
+				<div class="visible-xs">
+					<a href="#" class="team-status-toggle switcher btn dropdown-toggle">
+						<i class="fa fa-users"></i>
+					</a>
+				</div>
+				<!-- /TEAM STATUS FOR MOBILE -->
+				<!-- SIDEBAR COLLAPSE -->
+				<div id="sidebar-collapse" class="sidebar-collapse btn">
+					<i class="fa fa-bars" data-icon1="fa fa-bars"
+						data-icon2="fa fa-bars"></i>
+				</div>
+				<!-- /SIDEBAR COLLAPSE -->
+			</div>
+			<!-- NAVBAR LEFT -->
+
+			<!-- /NAVBAR LEFT -->
+			<!-- BEGIN TOP NAVIGATION MENU -->
+			<ul class="nav navbar-nav pull-right">
+
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<li class="dropdown user" id="header-user"><a href="#"
+					class="dropdown-toggle" data-toggle="dropdown"> <span
+						class="username">Administrator</span> <i class="fa fa-angle-down"></i>
+				</a>
+					<ul class="dropdown-menu">
+						<li><a href="settings_users.html"><i class="fa fa-cog"></i> Account
+								Settings</a></li>
+						<li><a href="login.html"><i class="fa fa-power-off"></i>
+								Log Out</a></li>
+					</ul></li>
+				<!-- END USER LOGIN DROPDOWN -->
+			</ul>
+			<!-- END TOP NAVIGATION MENU -->
+		</div>
+
+	</header>
+	<!--/HEADER -->
+
+	<!-- PAGE -->
+	<section id="page">
+		<!-- SIDEBAR -->
+		<div id="sidebar" class="sidebar">
+			<div class="sidebar-menu nav-collapse">
+				<!-- SIDEBAR MENU -->
+				<ul>
+					<li class="active"><a href="dashboard.html"> <i
+							class="fa fa-tachometer fa-fw"></i> <span class="menu-text">Dashboard</span>
+							<span class="selected"></span>
+					</a></li>
+					<li><a href="snapshots.html"> <i
+							class="fa fa-camera fa-fw"></i> <span class="menu-text">Snaps</span>
+							<span class="selected"></span>
+					</a></li>
+					<li><a href="restore.html"> <i
+							class="fa fa-download fa-fw"></i> <span class="menu-text">Restore</span>
+							<span class="selected"></span>
+					</a></li>
+					<li><a href="schedule.html"> <i
+							class="fa fa-calendar fa-fw"></i> <span class="menu-text">Schedule</span>
+							<span class="selected"></span>
+					</a></li>
+					<li class="has-sub"><a href="javascript:;" class=""> <i
+							class="fa fa-cogs fa-fw"></i> <span class="menu-text">Settings</span>
+							<span class="arrow"></span>
+					</a>
+						<ul class="sub">
+							<li><a class="" href="settings_controller.html"><i
+									class="fa fa-bars fa-fw"></i><span class="sub-menu-text">Controller</span></a></li>
+							<li><a class="" href="settings_snapshot.html"><i
+									class="fa fa-camera fa-fw"></i><span class="sub-menu-text">Snapshot</span></a></li>
+							<li><a class="" href="settings_users.html"><i
+									class="fa fa-users fa-fw"></i><span class="sub-menu-text">Users</span></a></li>
+							<li><a class="" href="settings_db.html"><i
+									class="fa fa-archive fa-fw"></i><span class="sub-menu-text">Database</span></a></li>
+						</ul></li>
+
+					<li><a href="help.html"> <i
+							class="fa fa-question-circle fa-fw"></i> <span class="menu-text">Help</span>
+							<span class="selected"></span>
+					</a></li>
+				</ul>
+				<!-- /SIDEBAR MENU -->
+			</div>
+		</div>
+		<!-- /SIDEBAR -->
+		<div id="main-content">
+
+			<div class="container">
+				<div class="row">
+					<div id="content" class="col-lg-12">
+						<!-- PAGE HEADER-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-header">
+									<!-- STYLER -->
+
+									<!-- /STYLER -->
+									<!-- BREADCRUMBS -->
+									<ul class="breadcrumb">
+										<li><i class="fa fa-tachometer"></i> <a
+											href="dashboard.html">Dashboard</a></li>
+									</ul>
+									<!-- /BREADCRUMBS -->
+
+									<div class="description">Summary, stats and more</div>
+								</div>
+							</div>
+						</div>
+						<!-- /PAGE HEADER -->
+						<!-- SNAPSHOT CONTENT -->
+						<div class="row">
+							<br />
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="dashbox panel panel-default">
+											<div class="panel-body">
+												<div class="panel-left red">
+													<i class="fa fa-instagram fa-3x"></i>
+												</div>
+												<div class="panel-right">
+													<div class="number">23</div>
+													<div class="title">Total Snapshots Archived</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="dashbox panel panel-default">
+											<div class="panel-body">
+												<div class="panel-left blue">
+													<i class="fa fa-download fa-3x"></i>
+												</div>
+												<div class="panel-right">
+													<div class="number">4</div>
+													<div class="title">Total Restores Done</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="dashbox panel panel-default">
+											<div class="panel-body">
+												<div class="panel-left green">
+													<i class="fa fa-asterisk fa-3x"></i>
+												</div>
+												<div class="panel-right">
+													<div class="number">3</div>
+													<div class="title">Golden Snapshots Available</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br /> <br />
+							<div class="col-md-12">
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4>
+											<i class="fa fa-retweet"></i>Network Flow Density
+										</h4>
+
+										<div class="tools">
+											<div class="btn-group dropdown">
+												<button data-toggle="dropdown"
+													class="btn  btn-default btn-xs dropdown-toggle">
+													Week <span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu context">
+													<li><a href="#">Month</a></li>
+													<li><a href="#">Year</a></li>
+													<li class="divider"></li>
+													<li><a href="#">All Time</a></li>
+												</ul>
+											</div>
+											&nbsp;&nbsp; <a class="reload" href="javascript:;"> <i
+												class="fa fa-refresh"></i>
+											</a>
+										</div>
+									</div>
+									<div class="box-body">
+										<div id="networkDensityGraph" class="chart"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /SNAPSHOT CONTENT -->
+
+						<div class="footer-tools">
+							<span class="go-top"> <i class="fa fa-chevron-up"></i> Top
+							</span>
+						</div>
+					</div>
+					<!-- /CONTENT-->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/PAGE -->
+	<!-- JAVASCRIPTS -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- JQUERY -->
+	<script src="js/jquery/jquery-2.0.3.min.js"></script>
+	<!-- JQUERY UI-->
+	<script
+		src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<script src="bootstrap-dist/js/bootstrap.min.js"></script>
+
+
+	<!-- DATE RANGE PICKER -->
+	<script src="js/bootstrap-daterangepicker/moment.min.js"></script>
+
+	<script src="js/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+	<!-- SLIMSCROLL -->
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+	<!-- SLIMSCROLL -->
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.min.js"></script>
+	<!-- BLOCK UI -->
+	<script type="text/javascript"
+		src="js/jQuery-BlockUI/jquery.blockUI.min.js"></script>
+	<!-- SPARKLINES -->
+	<script type="text/javascript"
+		src="js/sparklines/jquery.sparkline.min.js"></script>
+	<!-- EASY PIE CHART -->
+	<script src="js/jquery-easing/jquery.easing.min.js"></script>
+	<script type="text/javascript"
+		src="js/easypiechart/jquery.easypiechart.min.js"></script>
+	<!-- FLOT CHARTS -->
+	<script src="js/flot/jquery.flot.min.js"></script>
+	<script src="js/flot/jquery.flot.time.min.js"></script>
+	<script src="js/flot/jquery.flot.selection.min.js"></script>
+	<script src="js/flot/jquery.flot.resize.min.js"></script>
+	<script src="js/flot/jquery.flot.pie.min.js"></script>
+	<script src="js/flot/jquery.flot.stack.min.js"></script>
+	<script src="js/flot/jquery.flot.crosshair.min.js"></script>
+	<script src="js/flot/jquery.flot.axislabels.js"></script>
+	<!-- TODO -->
+	<script type="text/javascript"
+		src="js/jquery-todo/js/paddystodolist.js"></script>
+	<!-- TIMEAGO -->
+	<script type="text/javascript" src="js/timeago/jquery.timeago.min.js"></script>
+	<!-- FULL CALENDAR -->
+	<script type="text/javascript"
+		src="js/fullcalendar/fullcalendar.min.js"></script>
+	<!-- COOKIE -->
+	<script type="text/javascript"
+		src="js/jQuery-Cookie/jquery.cookie.min.js"></script>
+	<!-- GRITTER -->
+	<script type="text/javascript"
+		src="js/gritter/js/jquery.gritter.min.js"></script>
+	<!-- CUSTOM SCRIPT -->
+	<script src="js/script.js"></script>
+	<script>
+		jQuery(document).ready(function() {
+			App.init();
+			createNetworkDenistyGraph();
+		});
+
+		function createNetworkDenistyGraph() {
+
+			var data = [ [ 0, 11 ], [ 1, 15 ], [ 2, 25 ], [ 3, 24 ], [ 4, 13 ],
+					[ 5, 18 ] ];
+			var dataset = [ {
+				label : "Flows to Snapshot",
+				data : data,
+				color : "#375471"
+			} ];
+
+			var options = {
+				series : {
+					bars : {
+						show : true
+					}
+				},
+				bars : {
+					align : "center",
+					barWidth : 0.5,
+		            fill:1
+				},
+				xaxis : {
+					axisLabel : "Snapshot Id",
+					axisLabelUseCanvas : true,
+					axisLabelFontSizePixels : 12,
+					axisLabelFontFamily : 'Verdana, Arial',
+					axisLabelPadding : 10
+				},
+				yaxis : {
+					axisLabel : "No. Of Flows",
+					axisLabelUseCanvas : true,
+					axisLabelFontSizePixels : 12,
+					axisLabelFontFamily : 'Verdana, Arial',
+					axisLabelPadding : 3
+				},
+				legend : {
+					noColumns : 0,
+					labelBoxBorderColor : "#000000",
+					position : "nw"
+				},
+				grid : {
+					hoverable : true,
+					borderWidth : 2,
+					backgroundColor : {
+						colors : [ "#ffffff", "#EDF5FF" ]
+					}
+				}
+			};
+
+			$(document).ready(function() {
+				$.plot($("#networkDensityGraph"), dataset, options);
+				$("#networkDensityGraph").UseTooltip();
+			});
+
+		}
+	</script>
+	<!-- /JAVASCRIPTS -->
+</body>
+</html>

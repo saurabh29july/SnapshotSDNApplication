@@ -1,0 +1,790 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Snapshot | Main Snaps</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" type="text/css" href="css/cloud-admin.css">
+<link rel="stylesheet" type="text/css" href="css/themes/default.css"
+	id="skin-switcher">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<!-- STYLESHEETS -->
+<!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- ANIMATE -->
+<link rel="stylesheet" type="text/css"
+	href="css/animatecss/animate.min.css" />
+<!-- DATE RANGE PICKER -->
+<link rel="stylesheet" type="text/css"
+	href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+<!-- D3 -->
+<script type="text/javascript" src="js/d3/d3.v3.min.js"></script>
+<!-- TODO -->
+<link rel="stylesheet" type="text/css"
+	href="js/jquery-todo/css/styles.css" />
+<!-- FULL CALENDAR -->
+<link rel="stylesheet" type="text/css"
+	href="js/fullcalendar/fullcalendar.min.css" />
+
+<!-- DATA TABLES -->
+<link rel="stylesheet" type="text/css"
+	href="js/datatables/media/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="js/datatables/media/assets/css/datatables.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="js/datatables/extras/TableTools/media/css/TableTools.min.css" />
+<!-- GRITTER -->
+<link rel="stylesheet" type="text/css"
+	href="js/gritter/css/jquery.gritter.css" />
+<!-- FONTS -->
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'
+	rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- HEADER -->
+	<header class="navbar clearfix" id="header">
+		<div class="container">
+			<div class="navbar-brand">
+				<!-- COMPANY LOGO -->
+				<a href="dashboard.html"> <span
+					style="margin-left: 50px; font-weight: 600; color: white;">Snapshot
+						SDN Application</span>
+				</a>
+				<!-- /COMPANY LOGO -->
+				<!-- TEAM STATUS FOR MOBILE -->
+				<div class="visible-xs">
+					<a href="#" class="team-status-toggle switcher btn dropdown-toggle">
+						<i class="fa fa-users"></i>
+					</a>
+				</div>
+				<!-- /TEAM STATUS FOR MOBILE -->
+				<!-- SIDEBAR COLLAPSE -->
+				<div id="sidebar-collapse" class="sidebar-collapse btn">
+					<i class="fa fa-bars" data-icon1="fa fa-bars"
+						data-icon2="fa fa-bars"></i>
+				</div>
+				<!-- /SIDEBAR COLLAPSE -->
+			</div>
+			<!-- NAVBAR LEFT -->
+
+			<!-- /NAVBAR LEFT -->
+			<!-- BEGIN TOP NAVIGATION MENU -->
+			<ul class="nav navbar-nav pull-right">
+
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<li class="dropdown user" id="header-user"><a href="#"
+					class="dropdown-toggle" data-toggle="dropdown"> <span
+						class="username" id="logedInUserName">Administrator</span> <i
+						class="fa fa-angle-down"></i>
+				</a>
+					<ul class="dropdown-menu">
+						<li><a href="settings_users.html"><i class="fa fa-cog"></i>
+								Account Settings</a></li>
+						<li><a href="login.html"><i class="fa fa-power-off"></i>
+								Log Out</a></li>
+					</ul></li>
+				<!-- END USER LOGIN DROPDOWN -->
+			</ul>
+			<!-- END TOP NAVIGATION MENU -->
+		</div>
+
+	</header>
+	<!--/HEADER -->
+
+	<!-- PAGE -->
+	<section id="page">
+		<!-- SIDEBAR -->
+		<div id="sidebar" class="sidebar">
+			<div class="sidebar-menu nav-collapse">
+				<!-- SIDEBAR MENU -->
+				<ul>
+					<li><a href="dashboard.html"> <i
+							class="fa fa-tachometer fa-fw"></i> <span class="menu-text">Dashboard</span>
+							<span class="selected"></span>
+					</a></li>
+					<li class="active"><a href="snapshots.html"> <i
+							class="fa fa-camera fa-fw"></i> <span class="menu-text">Snaps</span>
+							<span class="selected"></span>
+					</a></li>
+					<li><a href="restore.html"> <i
+							class="fa fa-download fa-fw"></i> <span class="menu-text">Restore</span>
+							<span class="selected"></span>
+					</a></li>
+					<!-- <li><a href="schedule.html"> <i
+							class="fa fa-calendar fa-fw"></i> <span class="menu-text">Schedule</span>
+							<span class="selected"></span>
+					</a></li> -->
+					<li class="has-sub"><a href="javascript:;" class=""> <i
+							class="fa fa-cogs fa-fw"></i> <span class="menu-text">Settings</span>
+							<span class="arrow"></span>
+					</a>
+						<ul class="sub">
+							<li><a class="" href="settings_controller.html"><i
+									class="fa fa-bars fa-fw"></i><span class="sub-menu-text">Controller</span></a></li>
+							<li><a class="" href="settings_snapshot.html"><i
+									class="fa fa-camera fa-fw"></i><span class="sub-menu-text">Snapshot</span></a></li>
+							<li><a class="" href="settings_users.html"><i
+									class="fa fa-users fa-fw"></i><span class="sub-menu-text">Users</span></a></li>
+							<li><a class="" href="settings_db.html"><i
+									class="fa fa-archive fa-fw"></i><span class="sub-menu-text">Database</span></a></li>
+						</ul></li>
+
+					<li><a href="help.html"> <i
+							class="fa fa-question-circle fa-fw"></i> <span class="menu-text">Help</span>
+							<span class="selected"></span>
+					</a></li>
+				</ul>
+				<!-- /SIDEBAR MENU -->
+			</div>
+		</div>
+		<!-- /SIDEBAR -->
+		<div id="main-content">
+
+			<div class="container">
+				<div class="row">
+					<div id="content" class="col-lg-12">
+						<!-- PAGE HEADER-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-header">
+									<!-- STYLER -->
+
+									<!-- /STYLER -->
+									<!-- BREADCRUMBS -->
+									<ul class="breadcrumb">
+										<li><i class="fa fa-camera"></i> <a href="snapshots.html">Snaps</a>
+										</li>
+									</ul>
+									<!-- /BREADCRUMBS -->
+
+									<div class="description">All your controller snapshot
+										details</div>
+								</div>
+							</div>
+						</div>
+						<!-- /PAGE HEADER -->
+						<!-- SNAPSHOT CONTENT -->
+						<div class="row">
+							<div class="col-md-12" id="snapshots">
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4>
+											<i class="fa fa-camera"></i>Captured Snapshots
+										</h4>
+										<div class="tools hidden-xs">
+											<button class="btn btn-default btn-xs takeSnapshotNow">
+												<i class="fa fa-camera"></i> Take Snapshot Now
+											</button>
+										</div>
+									</div>
+									<div class="box-body">
+										<br />
+										<div role="grid" class="dataTables_wrapper form-inline"
+											id="datatable1_wrapper">
+
+											<table cellspacing="0" cellpadding="0" border="0"
+												class="datatable table table-striped table-bordered table-hover dataTable"
+												id="datatable1" aria-describedby="datatable1_info">
+												<thead>
+													<tr role="row">
+														<th>ID</th>
+														<th>Taken By</th>
+														<th>Time</th>
+														<th>Captured</th>
+														<th>Golden Config?</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody role="alert" aria-live="polite" aria-relevant="all">
+													<tr>
+														<td>1</td>
+														<td>Nightly Schedule</td>
+														<td>26-1-2015 11:23:00</td>
+														<td><span class="label label-default">Flows</span>
+															&nbsp;<span class="label label-default">Topology</span></td>
+														<td><button class="btn btn-default btn-xs"
+																title="Mark this snapshot as Golden config">
+																<i class="fa fa-star-o"></i>&nbsp; Mark
+															</button></td>
+														<td><button class="btn btn-info btn-xs"
+																onClick="showDetails();"
+																title="View details of this snapshot">
+																<i class="fa fa-plus-square"></i>
+															</button> &nbsp;
+															<button class="btn btn-danger btn-xs"
+																title="Delete this snapshot">
+																<i class="fa fa-trash-o"></i>
+															</button></td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>Nightly Schedule</td>
+														<td>27-1-2015 11:23:00</td>
+														<td><span class="label label-default">Flows</span>
+															&nbsp;<span class="label label-default">Topology</span></td>
+														<td><button class="btn btn-default btn-xs"
+																title="Mark this snapshot as Golden config">
+																<i class="fa fa-star-o"></i>&nbsp; Mark
+															</button></td>
+														<td><button class="btn btn-info btn-xs"
+																onClick="showDetails();"
+																title="View details of this snapshot">
+																<i class="fa fa-plus-square"></i>
+															</button> &nbsp;
+
+															<button class="btn btn-danger btn-xs"
+																title="Delete this snapshot">
+																<i class="fa fa-trash-o"></i>
+															</button></td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>On Demand</td>
+														<td>29-1-2015 23:55:00</td>
+														<td><span class="label label-default">Flows</span>
+															&nbsp;<span class="label label-default">Topology</span>&nbsp;<span
+															class="label label-default">Configuration</span></td>
+														<td><button class="btn btn-warning btn-xs"
+																title="Remove this config from Golden config">
+																<i class="fa fa-star"></i>&nbsp; Unmark
+															</button></td>
+														<td><button class="btn btn-info btn-xs"
+																onClick="showDetails();"
+																title="View details of this snapshot">
+																<i class="fa fa-plus-square"></i>
+															</button> &nbsp;
+															<button class="btn btn-danger btn-xs"
+																title="Delete this snapshot">
+																<i class="fa fa-trash-o"></i>
+															</button></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12" id="details">
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4>
+											<i class="fa fa-table"></i>Flows
+										</h4>
+										<div class="tools hidden-xs">
+											<button class="btn btn-default btn-xs restore">
+												<i class="fa fa-download"></i> Restore
+											</button>
+										</div>
+									</div>
+									<div class="box-body">
+										<table class="table table-striped table-bordered table-hover ">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Node</th>
+													<th>Json</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>DHCPIn</td>
+													<td>01:00:00:A2:9C:00:00</td>
+													<td>{"name":"42VNC21","ingressPort":"2","nwSrc":"192.168.1.42","nwDst":"192.168.1.21","installInHw":"true","priority":"501","etherType":"0x800","actions":["OUTPUT=1","ENQUEUE=1:1"],"node":{"id":"01:00:00:0c:29:23:55:03","type":"OF"}}</td>
+												</tr>
+												<tr>
+													<td>DHCPOut</td>
+													<td>01:00:00:A2:9C:00:00</td>
+													<td>{"name":"21VNC42","ingressPort":"1","nwSrc":"192.168.1.21","nwDst":"192.168.1.42","installInHw":"true","priority":"501","etherType":"0x800","actions":["OUTPUT=2","ENQUEUE=2:1"],"node":{"id":"01:00:00:0c:29:23:55:03","type":"OF"}}</td>
+												</tr>
+											</tbody>
+										</table>
+										<br />
+									</div>
+								</div>
+
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4>
+											<i class="fa fa-table"></i>Topology & Statistics
+										</h4>
+									</div>
+									<div class="box-body">
+										<div class="row">
+											<div class="col-md-6">
+												<div id="topology1"></div>
+											</div>
+											<!-- DETAILS TAB -->
+											<div class="col-md-6">
+												<div class="well" style="height: 400px;">
+													<h4>
+														<b>Topology Details</b>
+													</h4>
+													Please double click device/link to see details
+
+													<hr />
+
+													<form id="topologyDetailsForm" class="form-horizontal "
+														action="javascript:void(0);">
+														<div class="form-group">
+															<div class="col-md-12 right">
+																<span id="deviceName"></span>
+															</div>
+														</div>
+														<div class="form-group">
+															<div class="col-md-12 right">
+																<span id="deviceId"></span>
+															</div>
+														</div>
+														<div class="form-group">
+															<div class="col-md-12 right">
+																<span id="devicePorts"></span>
+															</div>
+														</div>
+														<div class="form-group">
+															<div class="col-md-12 right">
+																<table id="portStatsTable" class="table hidden">
+																	<thead>
+																		<tr>
+																			<th>Port</th>
+																			<th>Tx/Rx Packets</th>
+																			<th>Tx/Rx Drops</th>
+																			<th>Tx/Rx Errors</th>
+																			<th>Frame Errors</th>
+																			<th>Collisions</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+														<div id="wirelessDetailsDiv" class="form-group hidden"
+															style="margin-top: -30px;">
+															<div class="col-md-12 right">
+																<span id="wirelessDetails"></span>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<button class="btn btn-info" onClick="showShapshots();">
+									<i class="fa fa-check"></i> Back to Snapshots
+								</button>
+								<br />
+							</div>
+						</div>
+						<!-- /SNAPSHOT CONTENT -->
+
+						<div class="footer-tools">
+							<span class="go-top"> <i class="fa fa-chevron-up"></i> Top
+							</span>
+						</div>
+					</div>
+					<!-- /CONTENT-->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/PAGE -->
+	<!-- JAVASCRIPTS -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- JQUERY -->
+	<script src="js/jquery/jquery-2.0.3.min.js"></script>
+	<!-- JQUERY UI-->
+	<script
+		src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<script src="bootstrap-dist/js/bootstrap.min.js"></script>
+
+
+	<!-- DATE RANGE PICKER -->
+	<script src="js/bootstrap-daterangepicker/moment.min.js"></script>
+
+	<script src="js/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+	<!-- SLIMSCROLL -->
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+
+	<!-- BOOTBOX -->
+	<script type="text/javascript" src="js/bootbox/bootbox.min.js"></script>
+	<!-- SLIMSCROLL -->
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.min.js"></script>
+	<!-- BLOCK UI -->
+	<script type="text/javascript"
+		src="js/jQuery-BlockUI/jquery.blockUI.min.js"></script>
+	<!-- SPARKLINES -->
+	<script type="text/javascript"
+		src="js/sparklines/jquery.sparkline.min.js"></script>
+	<!-- EASY PIE CHART -->
+	<script src="js/jquery-easing/jquery.easing.min.js"></script>
+	<script type="text/javascript"
+		src="js/easypiechart/jquery.easypiechart.min.js"></script>
+	<!-- FLOT CHARTS -->
+	<script src="js/flot/jquery.flot.min.js"></script>
+	<script src="js/flot/jquery.flot.time.min.js"></script>
+	<script src="js/flot/jquery.flot.selection.min.js"></script>
+	<script src="js/flot/jquery.flot.resize.min.js"></script>
+	<script src="js/flot/jquery.flot.pie.min.js"></script>
+	<script src="js/flot/jquery.flot.stack.min.js"></script>
+	<script src="js/flot/jquery.flot.crosshair.min.js"></script>
+	<!-- TODO -->
+	<script type="text/javascript"
+		src="js/jquery-todo/js/paddystodolist.js"></script>
+	<!-- TIMEAGO -->
+	<script type="text/javascript" src="js/timeago/jquery.timeago.min.js"></script>
+	<!-- FULL CALENDAR -->
+	<script type="text/javascript"
+		src="js/fullcalendar/fullcalendar.min.js"></script>
+	<!-- COOKIE -->
+	<script type="text/javascript"
+		src="js/jQuery-Cookie/jquery.cookie.min.js"></script>
+
+	<!-- DATA TABLES -->
+	<script type="text/javascript"
+		src="js/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript"
+		src="js/datatables/media/assets/js/datatables.min.js"></script>
+	<script type="text/javascript"
+		src="js/datatables/extras/TableTools/media/js/TableTools.min.js"></script>
+	<script type="text/javascript"
+		src="js/datatables/extras/TableTools/media/js/ZeroClipboard.min.js"></script>
+	<!-- GRITTER -->
+	<script type="text/javascript"
+		src="js/gritter/js/jquery.gritter.min.js"></script>
+	<!-- CUSTOM SCRIPT -->
+	<script src="js/script.js"></script>
+	<script>
+		jQuery(document)
+				.ready(
+						function() {
+							App.init();
+							$('#details').hide();
+
+							$('#datatable1').dataTable({
+								"sPaginationType" : "bs_full"
+							});
+
+							$('.datatable')
+									.each(
+											function() {
+												var datatable = $(this);
+												// SEARCH - Add the placeholder for Search and Turn this into in-line form control
+												var search_input = datatable
+														.closest(
+																'.dataTables_wrapper')
+														.find(
+																'div[id$=_filter] input');
+												search_input
+														.attr('placeholder',
+																'Search');
+												search_input
+														.addClass('form-control input-sm');
+												// LENGTH - Inline-Form control
+												var length_sel = datatable
+														.closest(
+																'.dataTables_wrapper')
+														.find(
+																'div[id$=_length] select');
+												length_sel
+														.addClass('form-control input-sm');
+											});
+
+							$(".restore")
+									.click(
+											function() {
+												bootbox
+														.dialog({
+															message : "<form role='form' class='form-horizontal'><br/><div class='form-group'><label class='col-sm-3 control-label' for='restorationName'>Name</label><div class='col-sm-8'><input type='text' placeholder='21/1 Gold Config Rollback' id='restorationName' class='form-control'></div></div></form>",
+															title : "Please provide snapshot restore details below",
+															buttons : {
+																success : {
+																	label : "Restore",
+																	className : "btn-success",
+																	callback : function() {
+																		console
+																				.log("Restored");
+																	}
+																},
+																danger : {
+																	label : "Cancel",
+																	className : "btn-danger",
+																	callback : function() {
+																		console
+																				.log("Canceled");
+																	}
+																}
+															}
+														});
+											});
+
+							$(".takeSnapshotNow")
+									.click(
+											function() {
+												bootbox
+														.dialog({
+															message : "<form role='form' class='form-horizontal'><br/><div class='form-group'><label class='col-sm-3 control-label' for='snapshotName'>Name</label><div class='col-sm-8'><input type='text' placeholder='21/1 Gold Config' id='snapshotName' class='form-control'></div></div></form>",
+															title : "Please provide snapshot restore details below",
+															buttons : {
+																success : {
+																	label : "Take Snapshot",
+																	className : "btn-success",
+																	callback : function() {
+																		console
+																				.log("Snapshot Taken");
+																	}
+																},
+																danger : {
+																	label : "Cancel",
+																	className : "btn-danger",
+																	callback : function() {
+																		console
+																				.log("Canceled");
+																	}
+																}
+															}
+														});
+											});
+
+							d3TopologyGraph(null);
+
+						});
+
+		function showShapshots() {
+			$('#snapshots').show();
+			$('#details').hide();
+		}
+
+		function showDetails() {
+			$('#snapshots').hide();
+			$('#details').show();
+		}
+
+		function d3TopologyGraph(topologyJson) {
+
+			$("#topology1").html("&nbsp;");
+
+			var json2 = {
+				"directed" : false,
+				"graph" : [],
+				"nodes" : [ {
+					"id" : "00:00:00:00:00:00:00:01",
+					"image" : "img/device.png",
+					"name" : "HP Switch",
+					"wireless" : "",
+					"stats" : [ {
+						"port" : "eth12(1)",
+						"packets" : "2345/234",
+						"drops" : "12/0",
+						"errors" : "0/0",
+						"frameErrors" : "0",
+						"collisions" : "5"
+					}, {
+						"port" : "eth13(2)",
+						"packets" : "1345/134",
+						"drops" : "2/0",
+						"errors" : "0/0",
+						"frameErrors" : "0",
+						"collisions" : "3"
+					} ]
+				}, {
+					"id" : "01:00:00:00:00:00:00:03",
+					"image" : "img/device.png",
+					"name" : "MC 4200",
+					"wireless" : "",
+					"stats" : [ {
+						"port" : "ats(1)",
+						"packets" : "2345/234",
+						"drops" : "12/0",
+						"errors" : "0/0",
+						"frameErrors" : "0",
+						"collisions" : "5"
+					}, {
+						"port" : "wired_data(2)",
+						"packets" : "1345/134",
+						"drops" : "2/0",
+						"errors" : "0/0",
+						"frameErrors" : "0",
+						"collisions" : "0"
+					} ]
+				}, {
+					"id" : "Core Network",
+					"image" : "img/core.png",
+					"name" : "Core Network",
+					"wireless" : "",
+					"stats" : []
+				}, {
+					"id" : "192.168.10.11",
+					"image" : "img/host.png",
+					"name" : "skagarwal",
+					"wireless" : "",
+					"stats" : []
+				}, {
+					"id" : "192.168.10.12",
+					"image" : "img/host.png",
+					"name" : "ldronadula",
+					"wireless" : "",
+					"stats" : []
+				} ],
+				"links" : [ {
+					"source" : 3,
+					"target" : 0
+				}, {
+					"source" : 0,
+					"target" : 2
+				}, {
+					"source" : 2,
+					"target" : 1
+				}, {
+					"source" : 1,
+					"target" : 4
+				} ],
+				"multigraph" : false
+			};
+			var json = null;
+
+			if (topologyJson == null) {
+				json = json2;
+			} else {
+				json = JSON.parse(topologyJson);
+				console.log(json);
+			}
+
+			if (json == null) {
+				$("#topology1")
+						.html(
+								'<div class="alert alert-block alert-danger fade in"><a aria-hidden="true" href="#" data-dismiss="alert" class="close"><i class="fa fa-times"></i></a><p align="center"><b>Unable to fetch realtime topology of this call.</b><br/>Probable reason could be correct topology un-availability in SDN controller.</p></div>');
+				return;
+			}
+
+			// var width = 925, height = 300
+			var width = 800, height = 400
+
+			var svg = d3.select("#topology1").append("svg")
+					.attr("width", width).attr("height", height);
+
+			var force = d3.layout.force().gravity(.05).distance(120).charge(
+					-100).size([ width, height ]);
+
+			var drag = force.drag().on("dragstart", dragstart);
+
+			force.nodes(json.nodes).links(json.links).start();
+
+			var link = svg.selectAll(".link").data(json.links).enter().append(
+					"line").attr("class", "link");
+
+			var node = svg.selectAll(".node").data(json.nodes).enter().append(
+					"g").attr("class", "node").on("dblclick", dblclick).call(
+					force.drag);
+
+			node.append("image").attr("xlink:href", function(d) {
+				return d.image;
+			}).attr("x", -50).attr("y", -50).attr("width", 100).attr("height",
+					100);
+
+			node.append("text").attr("dx", -50).attr("dy", 70).text(
+					function(d) {
+						return d.id
+					});
+
+			force.on("tick", function() {
+				link.attr("x1", function(d) {
+					return d.source.x;
+				}).attr("y1", function(d) {
+					return d.source.y;
+				}).attr("x2", function(d) {
+					return d.target.x;
+				}).attr("y2", function(d) {
+					return d.target.y;
+				});
+
+				node.attr("transform", function(d) {
+					return "translate(" + d.x + "," + d.y + ")";
+				});
+			});
+
+			function dblclick(d) {
+				d3.select(this).classed("fixed", d.fixed = false);
+
+				// Populate Topology Details Here
+				$("#portStatsTable tbody").empty();
+
+				$("#deviceName").html("<b>Name: </b>" + d.name);
+				$("#deviceId").html("<b>ID: </b>" + d.id);
+
+				// Port Table
+				if (d.stats != null && d.stats.length > 0) {
+					var portsString = "";
+					$.each(d.stats, function(i, item) {
+						var rowData = "<tr>";
+						rowData += "<td>" + item.port + "</td>";
+						rowData += "<td>" + item.packets + "</td>";
+						rowData += "<td>" + item.drops + "</td>";
+						rowData += "<td>" + item.errors + "</td>";
+						rowData += "<td>" + item.frameErrors + "</td>";
+						if (item.collisions > 0) {
+							rowData += "<td><span class='badge badge-red'>"
+									+ item.collisions + "</span></td>";
+						} else {
+							rowData += "<td>" + item.collisions + "</td>";
+						}
+						rowData += "</tr>";
+						portsString += item.port + " , ";
+						$("#portStatsTable > tbody:last").append(rowData);
+					});
+					portsString = portsString.replace(/,\s*$/, "");
+					$("#devicePorts").html("<b>Ports: </b>" + portsString);
+
+					$("#portStatsTable").removeClass("hidden").addClass(
+							"visible");
+					$("#devicePorts").removeClass("hidden").addClass("visible");
+					$("#wirelessDetailsDiv").removeClass("visible").addClass(
+							"hidden");
+
+				} else {
+					$("#portStatsTable").removeClass("visible").addClass(
+							"hidden");
+					$("#devicePorts").removeClass("visible").addClass("hidden");
+					$("#wirelessDetailsDiv").removeClass("visible").addClass(
+							"hidden");
+
+					if (d.wireless != '') {
+						$("#wirelessDetails").html("");
+						var wirelessParams = d.wireless.split(",");
+						var i;
+						for (i = 0; i < wirelessParams.length; i++) {
+							$("#wirelessDetails").append(
+									"<div style='padding-bottom:10px;'><b>"
+											+ wirelessParams[i].split(":")[0]
+											+ ': </b>'
+											+ wirelessParams[i].split(":")[1]
+											+ '</div>');
+						}
+						$("#wirelessDetailsDiv").removeClass("hidden")
+								.addClass("visible");
+					}
+				}
+
+			}
+
+			function dragstart(d) {
+				d3.select(this).classed("fixed", d.fixed = true);
+			}
+
+		}
+	</script>
+	<!-- /JAVASCRIPTS -->
+</body>
+</html>

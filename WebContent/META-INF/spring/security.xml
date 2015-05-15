@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:social="http://www.springframework.org/schema/social"
+	xmlns:facebook="http://www.springframework.org/schema/social/facebook"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security.xsd 
+		http://www.springframework.org/schema/social 
+		classpath:org/springframework/social/config/xml/spring-social-1.1.xsd 
+		http://www.springframework.org/schema/social/facebook
+		classpath:org/springframework/social/facebook/config/xml/spring-social-facebook-1.1.xsd">
+
+
+	<http use-expressions="true" access-denied-page="/login.html">
+		<intercept-url pattern="/login.html" access="permitAll" />
+		<intercept-url pattern="/css/**" access="permitAll" />
+		<intercept-url pattern="/fonts/**" access="permitAll" />
+		<intercept-url pattern="/css/themes/**" access="permitAll" />
+		<intercept-url pattern="/font-awesome/**/**" access="permitAll" />
+		<intercept-url pattern="/img/**" access="permitAll" />
+		<intercept-url pattern="/js/**" access="permitAll" />
+		<intercept-url pattern="/scripts/**" access="permitAll" />
+		<intercept-url pattern="/js/jquery/**" access="permitAll" />
+		<intercept-url pattern="/bootstrap-dist/js/**" access="permitAll" />
+		<intercept-url pattern="/appIcons/**" access="permitAll" />
+		<intercept-url pattern="/appInstallGuides/**" access="permitAll" />
+		<intercept-url pattern="/rest/**" access="permitAll" />
+		<intercept-url pattern="/**" access="hasRole('Administrator')" />
+		<form-login login-page='/login.html' login-processing-url="/login"
+			authentication-failure-url="/login.html?message=error"
+			default-target-url="/dashboard.html" />
+
+		<logout logout-url="/logout" logout-success-url="/login.html?message=loggedout" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider user-service-ref="userDetailsService">
+		</authentication-provider>
+	</authentication-manager>
+
+	<beans:bean id="userDetailsService"
+		class="com.sdngeeks.snapshot.user.DetailsService" />
+
+</beans:beans>

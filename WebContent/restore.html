@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Snapshot | Restored Snaps</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" type="text/css" href="css/cloud-admin.css">
+<link rel="stylesheet" type="text/css" href="css/themes/default.css"
+	id="skin-switcher">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<!-- STYLESHEETS -->
+<!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- ANIMATE -->
+<link rel="stylesheet" type="text/css"
+	href="css/animatecss/animate.min.css" />
+<!-- DATE RANGE PICKER -->
+<link rel="stylesheet" type="text/css"
+	href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+<!-- TODO -->
+<link rel="stylesheet" type="text/css"
+	href="js/jquery-todo/css/styles.css" />
+<!-- FULL CALENDAR -->
+<link rel="stylesheet" type="text/css"
+	href="js/fullcalendar/fullcalendar.min.css" />
+
+<!-- DATA TABLES -->
+<link rel="stylesheet" type="text/css"
+	href="js/datatables/media/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="js/datatables/media/assets/css/datatables.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="js/datatables/extras/TableTools/media/css/TableTools.min.css" />
+<!-- GRITTER -->
+<link rel="stylesheet" type="text/css"
+	href="js/gritter/css/jquery.gritter.css" />
+<!-- FONTS -->
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'
+	rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- HEADER -->
+	<header class="navbar clearfix" id="header">
+		<div class="container">
+			<div class="navbar-brand">
+				<!-- COMPANY LOGO -->
+				<a href="dashboard.html"> <span
+					style="margin-left: 50px; font-weight: 600; color: white;">Snapshot
+						SDN Application</span>
+				</a>
+				<!-- /COMPANY LOGO -->
+				<!-- TEAM STATUS FOR MOBILE -->
+				<div class="visible-xs">
+					<a href="#" class="team-status-toggle switcher btn dropdown-toggle">
+						<i class="fa fa-users"></i>
+					</a>
+				</div>
+				<!-- /TEAM STATUS FOR MOBILE -->
+				<!-- SIDEBAR COLLAPSE -->
+				<div id="sidebar-collapse" class="sidebar-collapse btn">
+					<i class="fa fa-bars" data-icon1="fa fa-bars"
+						data-icon2="fa fa-bars"></i>
+				</div>
+				<!-- /SIDEBAR COLLAPSE -->
+			</div>
+			<!-- NAVBAR LEFT -->
+
+			<!-- /NAVBAR LEFT -->
+			<!-- BEGIN TOP NAVIGATION MENU -->
+			<ul class="nav navbar-nav pull-right">
+
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<li class="dropdown user" id="header-user"><a href="#"
+					class="dropdown-toggle" data-toggle="dropdown"> <span
+						class="username" id="logedInUserName">Administrator</span> <i
+						class="fa fa-angle-down"></i>
+				</a>
+					<ul class="dropdown-menu">
+						<li><a href="settings_users.html"><i class="fa fa-cog"></i> Account
+								Settings</a></li>
+						<li><a href="login.html"><i class="fa fa-power-off"></i>
+								Log Out</a></li>
+					</ul></li>
+				<!-- END USER LOGIN DROPDOWN -->
+			</ul>
+			<!-- END TOP NAVIGATION MENU -->
+		</div>
+
+	</header>
+	<!--/HEADER -->
+
+	<!-- PAGE -->
+	<section id="page">
+		<!-- SIDEBAR -->
+		<div id="sidebar" class="sidebar">
+			<div class="sidebar-menu nav-collapse">
+				<!-- SIDEBAR MENU -->
+				<ul>
+					<li><a href="dashboard.html"> <i
+							class="fa fa-tachometer fa-fw"></i> <span class="menu-text">Dashboard</span>
+							<span class="selected"></span>
+					</a></li>
+					<li><a href="snapshots.html"> <i
+							class="fa fa-camera fa-fw"></i> <span class="menu-text">Snaps</span>
+							<span class="selected"></span>
+					</a></li>
+					<li class="active"><a href="restore.html"> <i
+							class="fa fa-download fa-fw"></i> <span class="menu-text">Restore</span>
+							<span class="selected"></span>
+					</a></li>
+					<!-- <li><a href="schedule.html"> <i
+							class="fa fa-calendar fa-fw"></i> <span class="menu-text">Schedule</span>
+							<span class="selected"></span>
+					</a></li> -->
+					<li class="has-sub"><a href="javascript:;" class=""> <i
+							class="fa fa-cogs fa-fw"></i> <span class="menu-text">Settings</span>
+							<span class="arrow"></span>
+					</a>
+						<ul class="sub">
+							<li><a class="" href="settings_controller.html"><i
+									class="fa fa-bars fa-fw"></i><span class="sub-menu-text">Controller</span></a></li>
+							<li><a class="" href="settings_snapshot.html"><i
+									class="fa fa-camera fa-fw"></i><span class="sub-menu-text">Snapshot</span></a></li>
+							<li><a class="" href="settings_users.html"><i
+									class="fa fa-users fa-fw"></i><span class="sub-menu-text">Users</span></a></li>
+							<li><a class="" href="settings_db.html"><i
+									class="fa fa-archive fa-fw"></i><span class="sub-menu-text">Database</span></a></li>
+						</ul></li>
+
+					<li><a href="help.html"> <i
+							class="fa fa-question-circle fa-fw"></i> <span class="menu-text">Help</span>
+							<span class="selected"></span>
+					</a></li>
+				</ul>
+				<!-- /SIDEBAR MENU -->
+			</div>
+		</div>
+		<!-- /SIDEBAR -->
+		<div id="main-content">
+
+			<div class="container">
+				<div class="row">
+					<div id="content" class="col-lg-12">
+						<!-- PAGE HEADER-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-header">
+									<!-- STYLER -->
+
+									<!-- /STYLER -->
+									<!-- BREADCRUMBS -->
+									<ul class="breadcrumb">
+										<li><i class="fa fa-download"></i> <a href="restore.html">Restore</a>
+										</li>
+									</ul>
+									<!-- /BREADCRUMBS -->
+
+									<div class="description">Details of snapshot restorations
+										done on network</div>
+								</div>
+							</div>
+						</div>
+						<!-- /PAGE HEADER -->
+						<!-- SNAPSHOT CONTENT -->
+						<div class="row">
+							<div class="col-md-12" id="restore">
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4>
+											<i class="fa fa-camera"></i>Restored Snapshots
+										</h4>
+									</div>
+									<div class="box-body">
+										<br />
+										<div role="grid" class="dataTables_wrapper form-inline"
+											id="datatable1_wrapper">
+
+											<table cellspacing="0" cellpadding="0" border="0"
+												class="datatable table table-striped table-bordered table-hover dataTable"
+												id="datatable1" aria-describedby="datatable1_info">
+												<thead>
+													<tr role="row">
+														<th>ID</th>
+														<th>Snapshot Name</th>
+														<th>Time</th>
+														<th>Status</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody role="alert" aria-live="polite" aria-relevant="all">
+													<tr>
+														<td>1</td>
+														<td>Nightly Schedule</td>
+														<td>26-1-2015 11:23:00</td>
+														<td><span class="label label-warning">Partial</span></td>
+														<td><button class="btn btn-info btn-xs"
+																onClick="showDetails();">
+																<i class="fa fa-plus-square"></i> Details
+															</button>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>Nightly Schedule 2</td>
+														<td>6-11-2014 23:23:00</td>
+														<td><span class="label label-success">Success</span></td>
+														<td><button class="btn btn-info btn-xs"
+																onClick="showDetails();">
+																<i class="fa fa-plus-square"></i> Details
+															</button>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12" id="details">
+								<div class="alert alert-block alert-info fade in">
+									<h4>
+										<b>Restored Snapshot Details</b>
+									</h4>
+									<p>
+										<b>Name:</b> &nbsp; Nightly Schedule
+									</p>
+									<p>
+										<b>Time:</b> &nbsp; 26-1-2015 11:23:0
+									</p>
+								</div>
+								<div class="box border inverse">
+									<div class="box-title">
+										<h4>
+											<i class="fa fa-table"></i>Flows
+										</h4>
+									</div>
+									<div class="box-body">
+										<table class="table table-striped table-bordered table-hover">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Node</th>
+													<th style="width: 30px;">Json</th>
+													<th>Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>DHCPIn</td>
+													<td>01:00:00:A2:9C:00:00</td>
+													<td style="width: 30px;">{"name":"42VNC21","ingressPort":"2","nwSrc":"192.168.1.42","nwDst":"192.168.1.21","installInHw":"true","priority":"501","etherType":"0x800","actions":["OUTPUT=1","ENQUEUE=1:1"],"node":{"id":"01:00:00:0c:29:23:55:03","type":"OF"}}</td>
+													<td><span class="label label-success">Success</span></td>
+												</tr>
+												<tr>
+													<td>DHCPOut</td>
+													<td>01:00:00:A2:9C:00:00</td>
+													<td style="width: 30px;">{"name":"42VNC21","ingressPort":"2","nwSrc":"192.168.1.42","nwDst":"192.168.1.21","installInHw":"true","priority":"501","etherType":"0x800","actions":["OUTPUT=1","ENQUEUE=1:1"],"node":{"id":"01:00:00:0c:29:23:55:03","type":"OF"}}</td>
+													<td>
+														<button class="btn btn-warning btn-xs">
+															<i class="fa fa-download"></i> Try again
+														</button></td>
+												</tr>
+											</tbody>
+										</table>
+										<br />
+									</div>
+								</div>
+
+								<button class="btn btn-info" onClick="showRestore();">
+									<i class="fa fa-check"></i> Back to Restores
+								</button>
+								<br />
+							</div>
+
+						</div>
+						<!-- /SNAPSHOT CONTENT -->
+
+						<div class="footer-tools">
+							<span class="go-top"> <i class="fa fa-chevron-up"></i> Top
+							</span>
+						</div>
+					</div>
+					<!-- /CONTENT-->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/PAGE -->
+	<!-- JAVASCRIPTS -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- JQUERY -->
+	<script src="js/jquery/jquery-2.0.3.min.js"></script>
+	<!-- JQUERY UI-->
+	<script
+		src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<script src="bootstrap-dist/js/bootstrap.min.js"></script>
+
+
+	<!-- DATE RANGE PICKER -->
+	<script src="js/bootstrap-daterangepicker/moment.min.js"></script>
+
+	<script src="js/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+	<!-- SLIMSCROLL -->
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+	<!-- SLIMSCROLL -->
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript"
+		src="js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.min.js"></script>
+	<!-- BLOCK UI -->
+	<script type="text/javascript"
+		src="js/jQuery-BlockUI/jquery.blockUI.min.js"></script>
+	<!-- SPARKLINES -->
+	<script type="text/javascript"
+		src="js/sparklines/jquery.sparkline.min.js"></script>
+	<!-- EASY PIE CHART -->
+	<script src="js/jquery-easing/jquery.easing.min.js"></script>
+	<script type="text/javascript"
+		src="js/easypiechart/jquery.easypiechart.min.js"></script>
+	<!-- FLOT CHARTS -->
+	<script src="js/flot/jquery.flot.min.js"></script>
+	<script src="js/flot/jquery.flot.time.min.js"></script>
+	<script src="js/flot/jquery.flot.selection.min.js"></script>
+	<script src="js/flot/jquery.flot.resize.min.js"></script>
+	<script src="js/flot/jquery.flot.pie.min.js"></script>
+	<script src="js/flot/jquery.flot.stack.min.js"></script>
+	<script src="js/flot/jquery.flot.crosshair.min.js"></script>
+	<!-- TODO -->
+	<script type="text/javascript"
+		src="js/jquery-todo/js/paddystodolist.js"></script>
+	<!-- TIMEAGO -->
+	<script type="text/javascript" src="js/timeago/jquery.timeago.min.js"></script>
+	<!-- FULL CALENDAR -->
+	<script type="text/javascript"
+		src="js/fullcalendar/fullcalendar.min.js"></script>
+	<!-- COOKIE -->
+	<script type="text/javascript"
+		src="js/jQuery-Cookie/jquery.cookie.min.js"></script>
+
+	<!-- DATA TABLES -->
+	<script type="text/javascript"
+		src="js/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript"
+		src="js/datatables/media/assets/js/datatables.min.js"></script>
+	<script type="text/javascript"
+		src="js/datatables/extras/TableTools/media/js/TableTools.min.js"></script>
+	<script type="text/javascript"
+		src="js/datatables/extras/TableTools/media/js/ZeroClipboard.min.js"></script>
+	<!-- GRITTER -->
+	<script type="text/javascript"
+		src="js/gritter/js/jquery.gritter.min.js"></script>
+	<!-- CUSTOM SCRIPT -->
+	<script src="js/script.js"></script>
+	<script>
+		jQuery(document).ready(
+				function() {
+					App.init();
+
+					$('#datatable1').dataTable({
+						"sPaginationType" : "bs_full"
+					});
+
+					$('.datatable').each(
+							function() {
+								var datatable = $(this);
+								// SEARCH - Add the placeholder for Search and Turn this into in-line form control
+								var search_input = datatable.closest(
+										'.dataTables_wrapper').find(
+										'div[id$=_filter] input');
+								search_input.attr('placeholder', 'Search');
+								search_input.addClass('form-control input-sm');
+								// LENGTH - Inline-Form control
+								var length_sel = datatable.closest(
+										'.dataTables_wrapper').find(
+										'div[id$=_length] select');
+								length_sel.addClass('form-control input-sm');
+							});
+					$('#details').hide();
+				});
+
+		function showRestore() {
+			$('#restore').show();
+			$('#details').hide();
+		}
+
+		function showDetails() {
+			$('#restore').hide();
+			$('#details').show();
+		}
+	</script>
+	<!-- /JAVASCRIPTS -->
+</body>
+</html>
